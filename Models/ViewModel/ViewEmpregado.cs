@@ -8,8 +8,8 @@ namespace CaixaPrevidenciaBNB.Models.ViewModel
         public int Identificador { get; set; }
         public int Matricula { get; set; }
         public string Nome { get; set; }
-        public TipoSexo Sexo { get; set; }
-        public TipoEstadoCivil EstadoCivil { get; set; }
+        public int Sexo { get; set; }
+        public int EstadoCivil { get; set; }
         public DateTime Data_Nascimento { get; set; }
         public string Cpf { get; set; }
         public string Email { get; set; }

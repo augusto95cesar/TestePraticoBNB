@@ -15,11 +15,12 @@ namespace CaixaPrevidenciaBNB.Models.Help.Map
                 Cpf = Convert.ToInt32(empregado.Cpf),
                 Data_Nascimento = Convert.ToDateTime(empregado.Data_Nascimento),
                 Email = empregado.Email,
-                Estado_Civil = empregado.EstadoCivil == TipoEstadoCivil.Casado ? "Casado" :
-                empregado.EstadoCivil == TipoEstadoCivil.Solteiro ? "Solteiro" : "Viuvo",
+                Estado_Civil = empregado.EstadoCivil == TipoEstadoCivil.Casado.GetHashCode() ? "Casado" :
+                empregado.EstadoCivil == TipoEstadoCivil.Solteiro.GetHashCode() ? "Solteiro" : "Viuvo",
                 Matricula = empregado.Matricula,
                 Nome = empregado.Nome,
-                Sexo = empregado.Sexo == TipoSexo.Feminino ? "Feminino" : "Masculino"
+                Sexo = empregado.Sexo == TipoSexo.Feminino.GetHashCode() ? "Feminino" : "Masculino",
+                Id = empregado.Identificador
             };
         }
 
@@ -30,11 +31,13 @@ namespace CaixaPrevidenciaBNB.Models.Help.Map
                 Cpf = empregado.Cpf.ToString(),
                 Data_Nascimento = Convert.ToDateTime(empregado.Data_Nascimento),
                 Email = empregado.Email,
-                EstadoCivil = empregado.Estado_Civil == "Casado" ? TipoEstadoCivil.Casado :
-                empregado.Estado_Civil == "Solteiro" ? TipoEstadoCivil.Solteiro : TipoEstadoCivil.Viuvo,
+                EstadoCivil = empregado.Estado_Civil == "Casado" ? TipoEstadoCivil.Casado.GetHashCode() :
+                empregado.Estado_Civil == "Solteiro" ? TipoEstadoCivil.Solteiro.GetHashCode() : TipoEstadoCivil.Viuvo.GetHashCode(),
                 Matricula = empregado.Matricula,
                 Nome = empregado.Nome,
-                Sexo = empregado.Sexo == "Feminino" ? TipoSexo.Feminino : TipoSexo.Masculino
+                Sexo = empregado.Sexo == "Feminino" ? TipoSexo.Feminino.GetHashCode() : TipoSexo.Masculino.GetHashCode(),
+                Identificador = empregado.Id
+
             };
         }
 

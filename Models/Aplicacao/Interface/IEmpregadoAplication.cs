@@ -9,6 +9,6 @@ namespace CaixaPrevidenciaBNB.Models.Aplicacao.Interface
         ViewEmpregado GetEmpregadoById(int id);
         void CreateEmpregado(ViewEmpregado empregado);
         void UpdateEmpregado(int id, ViewEmpregado empregado);
-        void RemoveEmpregado(ViewEmpregado empregado);
+        void RemoveEmpregado(int id, ViewEmpregado empregado);
     }
 }

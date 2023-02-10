@@ -2,6 +2,7 @@
 using CaixaPrevidenciaBNB.Models.Entity;
 using CaixaPrevidenciaBNB.Models.Help.Map;
 using CaixaPrevidenciaBNB.Models.Repository;
+using System;
 using System.Collections.Generic;
 
 namespace CaixaPrevidenciaBNB.Models.Service
@@ -28,6 +29,18 @@ namespace CaixaPrevidenciaBNB.Models.Service
         internal List<Empregado> GetAll()
         {            
             return _repApp.EmpregadoRepository.FindAll().ConvertForList();           
+        }
+
+        internal void Update(Empregado bdempresa)
+        {
+            _repApp.EmpregadoRepository.Edit(bdempresa);
+            _repApp.Commit();
+        }
+
+        internal void Remove(Empregado bdempresa)
+        {
+            _repApp.EmpregadoRepository.Remove(bdempresa);
+            _repApp.Commit();
         }
     }
 }

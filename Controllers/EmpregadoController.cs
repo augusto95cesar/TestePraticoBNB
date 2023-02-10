@@ -50,8 +50,8 @@ namespace CaixaPrevidenciaBNB.Controllers
 
         // GET: Empregado/Edit/5
         public ActionResult Edit(int id)
-        {
-            return View();
+        {           
+            return View(_iEmpregadoApp.GetEmpregadoById(id));
         }
 
         // POST: Empregado/Edit/5
@@ -72,7 +72,7 @@ namespace CaixaPrevidenciaBNB.Controllers
         // GET: Empregado/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(_iEmpregadoApp.GetEmpregadoById(id));
         }
 
         // POST: Empregado/Delete/5
@@ -80,7 +80,8 @@ namespace CaixaPrevidenciaBNB.Controllers
         public ActionResult Delete(int id, ViewEmpregado viewEmpregado)
         {
             try
-            {  
+            {
+                _iEmpregadoApp.RemoveEmpregado(id, viewEmpregado);
                 return RedirectToAction("Index");
             }
             catch

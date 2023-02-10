@@ -2,8 +2,8 @@
 {
     public enum TipoEstadoCivil
     {
-        Solteiro,
-        Casado,
-        Viuvo
+        Solteiro = 1,
+        Casado = 2,
+        Viuvo = 3
     }
 }
